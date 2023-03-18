@@ -6,14 +6,15 @@ import styles from './Layout.scss';
 const Layout = () => (
   <>
     <header>
-      <h1 className={styles.title}>title</h1>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Fake Coursera</h1>
+      </div>
     </header>
     <main>
-      <Outlet />
+      <div className={styles.container}>
+        <Outlet />
+      </div>
     </main>
-    <footer>
-      <p className={styles.footer__text}>footer</p>
-    </footer>
   </>
 );
 

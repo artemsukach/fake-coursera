@@ -1,5 +1,6 @@
-// eslint-disable-next-line import/prefer-default-export
 export const ROUTE_PATH = {
-  list: () => '/',
-  fact: (id) => (id ? `/fact/${id}` : '/fact/:id'),
+  courses: () => '/courses/page?/:page?',
+  course: (id) => (id ? `/course/${id}` : '/course/:id'),
 };
+
+export const PAGE_SIZE = 10;

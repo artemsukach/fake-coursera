@@ -6,17 +6,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: './index.js',
   mode: 'development',
+  devtool: 'source-map',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   target: 'web',
   devServer: {
     port: '3000',
+    open: ['/courses'],
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, 'public'),
     },
-    open: true,
     hot: true,
     liveReload: true,
   },
@@ -37,8 +40,8 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: { localIdentName: '[local]' },
               importLoaders: 1,
-              modules: true,
             },
           },
         ],
@@ -50,11 +53,23 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: { localIdentName: '[local]' },
               importLoaders: 1,
-              modules: true,
             },
           },
           'sass-loader',
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'react-svg-loader',
+            options: {
+              jsx: true,
+            },
+          },
         ],
       },
     ],
