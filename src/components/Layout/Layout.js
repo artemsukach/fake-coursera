@@ -1,21 +1,23 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
+
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
+
+import Spinner from '../Spinner/Spinner';
 
 import styles from './Layout.scss';
 
-const Layout = () => (
-  <>
-    <header>
-      <div className={styles.container}>
-        <h1 className={styles.title}>Fake Coursera</h1>
-      </div>
-    </header>
+const Layout = () => {
+  const { state } = useNavigation();
+  return (
     <main>
+      <ScrollToTop />
+      {state === 'loading' && <Spinner />}
       <div className={styles.container}>
         <Outlet />
       </div>
     </main>
-  </>
-);
+  );
+};
 
 export default Layout;

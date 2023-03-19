@@ -23,16 +23,21 @@
       2,
       { "namedComponents": "arrow-function" }
     ],
-		"import/prefer-default-export": "off",
+    "import/prefer-default-export": "off",
     "no-underscore-dangle": ["error", { "allow": ["foo_", "_bar", "_retry"] }],
-		"no-param-reassign": 0,
-		"react/prop-types": 0, 
-		"no-shadow": "off",
-		"jsx-a11y/media-has-caption": [ 2, {
-			"audio": [ "Audio" ],
-			"video": [ "Video" ],
-			"track": [ "Track" ],
-		}],
+    "no-param-reassign": 0,
+    "react/prop-types": 0,
+    "no-shadow": "off",
+    "jsx-a11y/media-has-caption": [
+      0,
+      {
+        "audio": ["Audio"],
+        "video": ["Video"],
+        "track": ["Track"]
+      }
+    ],
+    "consistent-return": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-console": "warn",
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-double"],

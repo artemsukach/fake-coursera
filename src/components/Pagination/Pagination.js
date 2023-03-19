@@ -39,6 +39,7 @@ const Pagination = ({
           currentPage === 1 ? 'disabled' : ''
         }`}
         onClick={onPrevious}
+        role="presentation"
       >
         <div className={`${styles.arrow} ${styles.left}`} />
       </li>
@@ -61,6 +62,7 @@ const Pagination = ({
             }`}
             key={pageNumber}
             onClick={() => onPageChange(pageNumber)}
+            role="presentation"
           >
             {pageNumber}
           </li>
@@ -71,6 +73,7 @@ const Pagination = ({
           currentPage === lastPage ? 'disabled' : ''
         }`}
         onClick={onNext}
+        role="presentation"
       >
         <div className={`${styles.arrow} ${styles.right}`} />
       </li>

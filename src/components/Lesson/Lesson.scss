@@ -1,0 +1,34 @@
+.lesson {
+	background-color: #fafbfd;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.lesson__title {
+	font-size: 16px;
+	font-weight: 500;
+	margin-right: 10px;
+}
+
+.lesson__lockIcon{
+	width: 20px;
+}
+
+.lesson + .lesson,
+.lesson__popup + .lesson {
+	margin-top: 20px;
+}
+
+.lesson__popupTitle {
+	margin-top: 10px;
+	font-size: 24px;
+}
+
+.lesson__locked {
+	.lesson__title {
+		opacity: 0.6;
+	}
+}

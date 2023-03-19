@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createBrowserRouter, Navigate, redirect } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import { ROUTE_PATH } from '../../utils/constants';
 
@@ -12,13 +12,19 @@ import { getPathWithoutPage } from '../../helpers/getPathWithoutPage';
 
 import CoursesPage from './CoursesPage/CoursesPage';
 import ErrorPage from './ErrorPage/ErrorPage';
+import CoursePage from './CoursePage/CoursePage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate replace to="/courses" />,
-    // errorElement: <ErrorPage />,
+    element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
+      {
+        path: ROUTE_PATH.course(),
+        element: <CoursePage />,
+        loader: apiCourses.getCourseRouted,
+      },
       {
         path: ROUTE_PATH.courses(),
         element: <CoursesPage />,

@@ -1,0 +1,11 @@
+.skills {
+  list-style: inside;
+}
+
+.skills__item {
+  font-size: 13px;
+}
+
+.skills__item + .skills__item {
+  margin-top: 3px;
+}

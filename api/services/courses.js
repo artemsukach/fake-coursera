@@ -6,4 +6,6 @@ const getCourses = () => client.get(COURSES_URL);
 
 const getCourse = (id) => client.get(`${COURSES_URL}/${id}`);
 
-export const apiCourses = { getCourses, getCourse };
+const getCourseRouted = ({ params: { id } }) => getCourse(id);
+
+export const apiCourses = { getCourses, getCourse, getCourseRouted };

@@ -1,34 +1,24 @@
 import React from 'react';
+import { NavLink, useNavigation } from 'react-router-dom';
 
-import { useRouteError } from 'react-router-dom';
+import Spinner from '../../components/Spinner/Spinner';
 
 import styles from './ErrorPage.scss';
 
-const ErrorPage = () => {
-  const error = useRouteError();
+const NotFoundPage = () => {
+  const { state } = useNavigation();
 
   return (
-    <div>
-      <header>
-        <div className={styles.container}>
-          <h1 className={styles.title}>Fake Coursera</h1>
-        </div>
-      </header>
-      <main>
-        <div className={styles.container}>
-          <div className={styles.error}>
-            <h1 className={styles.error__title}>Looks like you got lost!</h1>
-            <p className={styles.error__description}>
-              Couldn’t find the page you were looking for.
-            </p>
-            {error.statusText && (
-              <p className={styles.error__status}>{error.message}</p>
-            )}
-          </div>
-        </div>
-      </main>
+    <div className={styles.errorPage}>
+      <div className={styles.errorPage__titleWrapper}>
+        <h1 className={styles.errorPage__title}>Error 404</h1>
+      </div>
+      <NavLink className={styles.errorPage__goBackButton} to="/courses">
+        Go Home
+      </NavLink>
+      {state === 'loading' && <Spinner />}
     </div>
   );
 };
 
-export default ErrorPage;
+export default NotFoundPage;

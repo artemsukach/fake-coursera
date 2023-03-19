@@ -1,0 +1,22 @@
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating_theme_light {
+  color: #000;
+}
+
+.rating_theme_dark {
+  color: #fff;
+}
+
+.ratingNumber {
+  font-size: 14px;
+}
+
+.starIcon {
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+}
