@@ -33,6 +33,10 @@ const Lesson = ({ lesson }) => {
           onClose={() => setShowPopup(false)}
         >
           <Video id={id} videoLink={link} />
+          <p className={styles.lesson__instruction}>
+            To speed up the video, use the (i) key. To reduce the video speed,
+            use the key (u)
+          </p>
           <h2 className={styles.lesson__popupTitle}>
             Lesson {order}. {title}
           </h2>
